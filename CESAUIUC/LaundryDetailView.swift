@@ -47,21 +47,27 @@ class LaundryDetailView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         
         let myBandView = UIView(frame: CGRect(x: 0, y: 0, width:screen_width,height: 80))
-        myBandView.backgroundColor = orangeTheme
-        myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
+        myBandView.backgroundColor = greenTheme
+        /*myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
         myBandView.layer.shadowOffset = CGSize(width: 0.5, height: 2.0)
-        myBandView.layer.shadowOpacity = 0.9
+        myBandView.layer.shadowOpacity = 0.9*/
         self.addSubview(myBandView)
         
         let functionTitle = UILabel(frame: CGRect(x: 0, y: 20, width: screen_width, height: 60))
-        functionTitle.text = "Laundry"
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            functionTitle.text = "洗衣房"
+        }else{
+            functionTitle.text = "Laundry"
+        }
+        
         if firstLaunch == false{
             let titleText = residentHallRequestList[residentHallNameIndex]
             functionTitle.text = titleText.replacingOccurrences(of: "%20", with: " ")
         }
         functionTitle.textColor = UIColor.white
         functionTitle.textAlignment = .center
-        functionTitle.font = UIFont(name: "Avenir-Light", size: 18)
+        functionTitle.font = UIFont(name: "Avenir-Heavy", size: 18)
         myBandView.addSubview(functionTitle)
         
         if firstLaunch == false{
@@ -117,7 +123,7 @@ class LaundryDetailView: UIView, UITableViewDelegate, UITableViewDataSource {
 //        cell.textLabel?.textColor = UIColor(white: 155/255, alpha: 1.0)
 //        cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 18)
         cell.initCellView(machine: self.machineStatus[indexPath.row])
-        
+        cell.selectionStyle = .none
         
         
         return cell

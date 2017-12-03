@@ -41,17 +41,23 @@ class LaundryFirstView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         
         let myBandView = UIView(frame: CGRect(x: 0, y: 0, width:screen_width,height: 80))
-        myBandView.backgroundColor = orangeTheme
-        myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
+        myBandView.backgroundColor = greenTheme
+        /*myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
         myBandView.layer.shadowOffset = CGSize(width: 0.5, height: 2.0)
-        myBandView.layer.shadowOpacity = 0.9
+        myBandView.layer.shadowOpacity = 0.9*/
         self.addSubview(myBandView)
         
         let functionTitle = UILabel(frame: CGRect(x: 0, y: 20, width: screen_width, height: 60))
-        functionTitle.text = "Laundry"
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            functionTitle.text = "洗衣房"
+        }else{
+            functionTitle.text = "Laundry"
+        }
+        
         functionTitle.textColor = UIColor.white
         functionTitle.textAlignment = .center
-        functionTitle.font = UIFont(name: "Avenir-Light", size: 19)
+        functionTitle.font = UIFont(name: "Avenir-Heavy", size: 19)
         myBandView.addSubview(functionTitle)
         
         
@@ -104,7 +110,13 @@ class LaundryFirstView: UIView, UITableViewDelegate, UITableViewDataSource {
         let askingText = UILabel(frame: CGRect(x: 20, y: 20, width: screen_width, height: 80))
         askingText.textAlignment = .left
         askingText.textColor = UIColor(white: 155/255, alpha: 0.5)
-        askingText.text = "Where do you live?"
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            askingText.text = "你所在的宿舍是?"
+        }else{
+            askingText.text = "Where do you live?"
+        }
+        
         askingText.font = UIFont(name: "Avenir-Medium", size: 15)
         headerView.addSubview(askingText)
         

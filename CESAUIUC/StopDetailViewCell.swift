@@ -31,9 +31,9 @@ class StopDetailViewCell: UITableViewCell {
         self.contentView.addSubview(cardView)
         
         let busNameLabel = UILabel(frame: CGRect(x: 20, y: 0, width: cardView.frame.width/3 * 2, height: cardView.frame.height/3 * 2 + 5))
-        busNameLabel.textColor = orangeTheme
+        busNameLabel.textColor = brownDarkTheme
         busNameLabel.text = headSignName
-        busNameLabel.font = UIFont(name: "Avenir-Roman", size: 15)
+        busNameLabel.font = UIFont(name: "Avenir-Medium", size: 15)
         cardView.addSubview(busNameLabel)
         
         

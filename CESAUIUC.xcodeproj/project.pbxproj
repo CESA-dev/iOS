@@ -11,10 +11,11 @@
 		1DC90C321E6752B1005672BE /* EWSFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90C311E6752B1005672BE /* EWSFirstView.swift */; };
 		1DC90C341E6754B3005672BE /* EWSFirstViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90C331E6754B3005672BE /* EWSFirstViewCell.swift */; };
 		1DC90C361E6774A2005672BE /* env.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DC90C351E6774A2005672BE /* env.plist */; };
+		BF23989F1FC37753007343E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF23989E1FC37752007343E5 /* GoogleService-Info.plist */; };
 		BF3C19381E79F68F00693026 /* CESAIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C19371E79F68F00693026 /* CESAIntroView.swift */; };
 		BF500AA61F4B1F870094BED4 /* StopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF500AA51F4B1F870094BED4 /* StopAnnotation.swift */; };
+		BF55AAC11FC7608500F43499 /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55AAC01FC7608500F43499 /* RestView.swift */; };
 		BF6E1C881E6CCCB000465730 /* DiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E1C871E6CCCB000465730 /* DiningViewController.swift */; };
-		BF6E1C8A1E6CCFB900465730 /* DiningListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E1C891E6CCFB900465730 /* DiningListView.swift */; };
 		BF71D6891DBD780100112A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71D6881DBD780100112A4E /* AppDelegate.swift */; };
 		BF71D68B1DBD780100112A4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71D68A1DBD780100112A4E /* ViewController.swift */; };
 		BF71D68E1DBD780100112A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF71D68C1DBD780100112A4E /* Main.storyboard */; };
@@ -24,21 +25,24 @@
 		BF71D6A91DBD780100112A4E /* CESAUIUCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71D6A81DBD780100112A4E /* CESAUIUCUITests.swift */; };
 		BF71D6B71DBD782700112A4E /* CESAMainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71D6B61DBD782700112A4E /* CESAMainMenuView.swift */; };
 		BF71D6B91DBD7AE900112A4E /* CESAMainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71D6B81DBD7AE900112A4E /* CESAMainMenuTableViewCell.swift */; };
-		BFB3895B1E7477A100EC4A4B /* DiningIkenberryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3895A1E7477A100EC4A4B /* DiningIkenberryView.swift */; };
+		BF82E33F1FCBA65E00AAE490 /* DiningContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF82E33E1FCBA65E00AAE490 /* DiningContentView.swift */; };
+		BF82E3411FCBC7FF00AAE490 /* DiningInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF82E3401FCBC7FF00AAE490 /* DiningInfoView.swift */; };
+		BF82E3431FCCC0AE00AAE490 /* DiningDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF82E3421FCCC0AE00AAE490 /* DiningDetailView.swift */; };
+		BF82E3451FCCC0CB00AAE490 /* DiningDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF82E3441FCCC0CB00AAE490 /* DiningDetailViewCell.swift */; };
 		BFC579F81F48762600A2026C /* RouteStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC579F71F48762600A2026C /* RouteStepViewController.swift */; };
 		BFCB897A1E6B6DD5000AD558 /* LaundryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89751E6B6DD5000AD558 /* LaundryViewController.swift */; };
 		BFCB897B1E6B6DD5000AD558 /* LaundryFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89761E6B6DD5000AD558 /* LaundryFirstView.swift */; };
 		BFCB897C1E6B6DD5000AD558 /* LaundryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89771E6B6DD5000AD558 /* LaundryDetailViewController.swift */; };
 		BFCB897D1E6B6DD5000AD558 /* LaundryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89781E6B6DD5000AD558 /* LaundryDetailView.swift */; };
 		BFCB897E1E6B6DD5000AD558 /* LaundryDetialViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89791E6B6DD5000AD558 /* LaundryDetialViewCellTableViewCell.swift */; };
-		BFCB89801E6B7248000AD558 /* DiningDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB897F1E6B7248000AD558 /* DiningDetailViewController.swift */; };
-		BFCB89821E6B7278000AD558 /* DiningDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89811E6B7278000AD558 /* DiningDetailView.swift */; };
-		BFCB89851E6B749D000AD558 /* DiningDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCB89841E6B749D000AD558 /* DiningDetailTableViewCell.swift */; };
 		BFCCE2481E50D1A000E9206C /* PostFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCE2471E50D1A000E9206C /* PostFirstView.swift */; };
 		BFCCE24A1E50D40000E9206C /* PostFirstViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCE2491E50D40000E9206C /* PostFirstViewCell.swift */; };
 		BFCCE24D1E51210E00E9206C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCE24C1E51210E00E9206C /* PostDetailView.swift */; };
 		BFCCE2511E5A0A4A00E9206C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCE2501E5A0A4A00E9206C /* PostViewController.swift */; };
 		BFCCE2531E5A52C600E9206C /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCCE2521E5A52C600E9206C /* PostDetailViewController.swift */; };
+		BFD5B3F61FCE2AB4004FCCEC /* DiningNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5B3F51FCE2AB4004FCCEC /* DiningNetworkRequest.swift */; };
+		BFD5B3F81FCE79A2004FCCEC /* DiningRandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5B3F71FCE79A2004FCCEC /* DiningRandomView.swift */; };
+		BFD5B3FA1FCF4F4D004FCCEC /* CESALanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD5B3F91FCF4F4D004FCCEC /* CESALanguageView.swift */; };
 		BFF76F621F4709930065C1DB /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF76F5C1F4709930065C1DB /* BusViewController.swift */; };
 		BFF76F631F4709930065C1DB /* BusScheduleNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF76F5D1F4709930065C1DB /* BusScheduleNetworkRequest.swift */; };
 		BFF76F641F4709930065C1DB /* BusScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF76F5E1F4709930065C1DB /* BusScheduleView.swift */; };
@@ -77,10 +81,12 @@
 		1DC90C331E6754B3005672BE /* EWSFirstViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWSFirstViewCell.swift; sourceTree = "<group>"; };
 		1DC90C351E6774A2005672BE /* env.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = env.plist; sourceTree = "<group>"; };
 		223C4FF89AD4724C32343A92 /* Pods-CESAUIUC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CESAUIUC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CESAUIUC/Pods-CESAUIUC.debug.xcconfig"; sourceTree = "<group>"; };
+		BF23989B1FC2677D007343E5 /* CESAUIUC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CESAUIUC.entitlements; sourceTree = "<group>"; };
+		BF23989E1FC37752007343E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF3C19371E79F68F00693026 /* CESAIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CESAIntroView.swift; sourceTree = "<group>"; };
 		BF500AA51F4B1F870094BED4 /* StopAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopAnnotation.swift; sourceTree = "<group>"; };
+		BF55AAC01FC7608500F43499 /* RestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestView.swift; sourceTree = "<group>"; };
 		BF6E1C871E6CCCB000465730 /* DiningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningViewController.swift; sourceTree = "<group>"; };
-		BF6E1C891E6CCFB900465730 /* DiningListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningListView.swift; sourceTree = "<group>"; };
 		BF71D6851DBD780100112A4E /* CESAUIUC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CESAUIUC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71D6881DBD780100112A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF71D68A1DBD780100112A4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,21 +102,24 @@
 		BF71D6AA1DBD780100112A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF71D6B61DBD782700112A4E /* CESAMainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CESAMainMenuView.swift; sourceTree = "<group>"; };
 		BF71D6B81DBD7AE900112A4E /* CESAMainMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CESAMainMenuTableViewCell.swift; sourceTree = "<group>"; };
-		BFB3895A1E7477A100EC4A4B /* DiningIkenberryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningIkenberryView.swift; sourceTree = "<group>"; };
+		BF82E33E1FCBA65E00AAE490 /* DiningContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningContentView.swift; sourceTree = "<group>"; };
+		BF82E3401FCBC7FF00AAE490 /* DiningInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningInfoView.swift; sourceTree = "<group>"; };
+		BF82E3421FCCC0AE00AAE490 /* DiningDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningDetailView.swift; sourceTree = "<group>"; };
+		BF82E3441FCCC0CB00AAE490 /* DiningDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningDetailViewCell.swift; sourceTree = "<group>"; };
 		BFC579F71F48762600A2026C /* RouteStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteStepViewController.swift; sourceTree = "<group>"; };
 		BFCB89751E6B6DD5000AD558 /* LaundryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryViewController.swift; sourceTree = "<group>"; };
 		BFCB89761E6B6DD5000AD558 /* LaundryFirstView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryFirstView.swift; sourceTree = "<group>"; };
 		BFCB89771E6B6DD5000AD558 /* LaundryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryDetailViewController.swift; sourceTree = "<group>"; };
 		BFCB89781E6B6DD5000AD558 /* LaundryDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryDetailView.swift; sourceTree = "<group>"; };
 		BFCB89791E6B6DD5000AD558 /* LaundryDetialViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaundryDetialViewCellTableViewCell.swift; sourceTree = "<group>"; };
-		BFCB897F1E6B7248000AD558 /* DiningDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningDetailViewController.swift; sourceTree = "<group>"; };
-		BFCB89811E6B7278000AD558 /* DiningDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningDetailView.swift; sourceTree = "<group>"; };
-		BFCB89841E6B749D000AD558 /* DiningDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BFCCE2471E50D1A000E9206C /* PostFirstView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFirstView.swift; sourceTree = "<group>"; };
 		BFCCE2491E50D40000E9206C /* PostFirstViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFirstViewCell.swift; sourceTree = "<group>"; };
 		BFCCE24C1E51210E00E9206C /* PostDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		BFCCE2501E5A0A4A00E9206C /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		BFCCE2521E5A52C600E9206C /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		BFD5B3F51FCE2AB4004FCCEC /* DiningNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningNetworkRequest.swift; sourceTree = "<group>"; };
+		BFD5B3F71FCE79A2004FCCEC /* DiningRandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiningRandomView.swift; sourceTree = "<group>"; };
+		BFD5B3F91FCF4F4D004FCCEC /* CESALanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CESALanguageView.swift; sourceTree = "<group>"; };
 		BFF76F5C1F4709930065C1DB /* BusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
 		BFF76F5D1F4709930065C1DB /* BusScheduleNetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusScheduleNetworkRequest.swift; sourceTree = "<group>"; };
 		BFF76F5E1F4709930065C1DB /* BusScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusScheduleView.swift; sourceTree = "<group>"; };
@@ -203,8 +212,10 @@
 		BF71D6871DBD780100112A4E /* CESAUIUC */ = {
 			isa = PBXGroup;
 			children = (
+				BF23989B1FC2677D007343E5 /* CESAUIUC.entitlements */,
 				BF71D6881DBD780100112A4E /* AppDelegate.swift */,
 				BF71D68A1DBD780100112A4E /* ViewController.swift */,
+				BFD5B3F91FCF4F4D004FCCEC /* CESALanguageView.swift */,
 				BF3C19371E79F68F00693026 /* CESAIntroView.swift */,
 				BF71D6B61DBD782700112A4E /* CESAMainMenuView.swift */,
 				BF71D6B81DBD7AE900112A4E /* CESAMainMenuTableViewCell.swift */,
@@ -218,6 +229,7 @@
 				BF71D6911DBD780100112A4E /* LaunchScreen.storyboard */,
 				BF71D6941DBD780100112A4E /* Info.plist */,
 				1DC90C351E6774A2005672BE /* env.plist */,
+				BF23989E1FC37752007343E5 /* GoogleService-Info.plist */,
 			);
 			path = CESAUIUC;
 			sourceTree = "<group>";
@@ -256,11 +268,13 @@
 			isa = PBXGroup;
 			children = (
 				BF6E1C871E6CCCB000465730 /* DiningViewController.swift */,
-				BF6E1C891E6CCFB900465730 /* DiningListView.swift */,
-				BFCB897F1E6B7248000AD558 /* DiningDetailViewController.swift */,
-				BFCB89811E6B7278000AD558 /* DiningDetailView.swift */,
-				BFCB89841E6B749D000AD558 /* DiningDetailTableViewCell.swift */,
-				BFB3895A1E7477A100EC4A4B /* DiningIkenberryView.swift */,
+				BF55AAC01FC7608500F43499 /* RestView.swift */,
+				BF82E33E1FCBA65E00AAE490 /* DiningContentView.swift */,
+				BF82E3401FCBC7FF00AAE490 /* DiningInfoView.swift */,
+				BF82E3421FCCC0AE00AAE490 /* DiningDetailView.swift */,
+				BF82E3441FCCC0CB00AAE490 /* DiningDetailViewCell.swift */,
+				BFD5B3F51FCE2AB4004FCCEC /* DiningNetworkRequest.swift */,
+				BFD5B3F71FCE79A2004FCCEC /* DiningRandomView.swift */,
 			);
 			name = Dining;
 			sourceTree = "<group>";
@@ -379,13 +393,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Tianyu Li";
 				TargetAttributes = {
 					BF71D6841DBD780100112A4E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = D65JPH8G3U;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					BF71D6981DBD780100112A4E = {
 						CreatedOnToolsVersion = 8.0;
@@ -428,6 +450,7 @@
 			files = (
 				1DC90C361E6774A2005672BE /* env.plist in Resources */,
 				BF71D6931DBD780100112A4E /* LaunchScreen.storyboard in Resources */,
+				BF23989F1FC37753007343E5 /* GoogleService-Info.plist in Resources */,
 				BF71D6901DBD780100112A4E /* Assets.xcassets in Resources */,
 				BF71D68E1DBD780100112A4E /* Main.storyboard in Resources */,
 			);
@@ -456,9 +479,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CESAUIUC/Pods-CESAUIUC-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -471,13 +499,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CESAUIUC-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BC0150AE66F95F396550FA52 /* [CP] Embed Pods Frameworks */ = {
@@ -486,9 +517,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CESAUIUC/Pods-CESAUIUC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -503,31 +541,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF76F641F4709930065C1DB /* BusScheduleView.swift in Sources */,
+				BF82E3451FCCC0CB00AAE490 /* DiningDetailViewCell.swift in Sources */,
+				BF82E33F1FCBA65E00AAE490 /* DiningContentView.swift in Sources */,
 				BFF76F751F4709E00065C1DB /* StopDetailViewController.swift in Sources */,
 				BFF76F631F4709930065C1DB /* BusScheduleNetworkRequest.swift in Sources */,
+				BFD5B3F81FCE79A2004FCCEC /* DiningRandomView.swift in Sources */,
 				BF500AA61F4B1F870094BED4 /* StopAnnotation.swift in Sources */,
 				BFF76F6C1F4709C30065C1DB /* SearchByRouteResultView.swift in Sources */,
+				BFD5B3F61FCE2AB4004FCCEC /* DiningNetworkRequest.swift in Sources */,
 				BFF76F731F4709E00065C1DB /* SearchByStopView.swift in Sources */,
+				BF55AAC11FC7608500F43499 /* RestView.swift in Sources */,
+				BF82E3431FCCC0AE00AAE490 /* DiningDetailView.swift in Sources */,
 				BFCCE2511E5A0A4A00E9206C /* PostViewController.swift in Sources */,
 				BFCB897C1E6B6DD5000AD558 /* LaundryDetailViewController.swift in Sources */,
 				BFF76F621F4709930065C1DB /* BusViewController.swift in Sources */,
 				BF71D6B71DBD782700112A4E /* CESAMainMenuView.swift in Sources */,
-				BF6E1C8A1E6CCFB900465730 /* DiningListView.swift in Sources */,
+				BF82E3411FCBC7FF00AAE490 /* DiningInfoView.swift in Sources */,
 				BFF76F6D1F4709C30065C1DB /* SearchByRouteResultCell.swift in Sources */,
 				BFCCE24D1E51210E00E9206C /* PostDetailView.swift in Sources */,
 				BF71D68B1DBD780100112A4E /* ViewController.swift in Sources */,
-				BFCB89851E6B749D000AD558 /* DiningDetailTableViewCell.swift in Sources */,
 				BFCCE2531E5A52C600E9206C /* PostDetailViewController.swift in Sources */,
-				BFCB89821E6B7278000AD558 /* DiningDetailView.swift in Sources */,
 				BF71D6891DBD780100112A4E /* AppDelegate.swift in Sources */,
 				BFF76F651F4709930065C1DB /* BusScheduleEmptyState.swift in Sources */,
-				BFB3895B1E7477A100EC4A4B /* DiningIkenberryView.swift in Sources */,
 				1DC90C341E6754B3005672BE /* EWSFirstViewCell.swift in Sources */,
 				BFF76F6B1F4709C30065C1DB /* SearchByRouteView.swift in Sources */,
 				BFCB897A1E6B6DD5000AD558 /* LaundryViewController.swift in Sources */,
 				BFF76F741F4709E00065C1DB /* SearchByStopViewCell.swift in Sources */,
 				BFCCE24A1E50D40000E9206C /* PostFirstViewCell.swift in Sources */,
-				BFCB89801E6B7248000AD558 /* DiningDetailViewController.swift in Sources */,
+				BFD5B3FA1FCF4F4D004FCCEC /* CESALanguageView.swift in Sources */,
 				1DC90C301E675212005672BE /* EWSViewController.swift in Sources */,
 				BFCB897E1E6B6DD5000AD558 /* LaundryDetialViewCellTableViewCell.swift in Sources */,
 				BF3C19381E79F68F00693026 /* CESAIntroView.swift in Sources */,
@@ -602,7 +643,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -610,7 +653,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -652,7 +699,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -660,7 +709,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -691,6 +744,7 @@
 			baseConfigurationReference = 223C4FF89AD4724C32343A92 /* Pods-CESAUIUC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CESAUIUC/CESAUIUC.entitlements;
 				DEVELOPMENT_TEAM = D65JPH8G3U;
 				INFOPLIST_FILE = CESAUIUC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -706,6 +760,7 @@
 			baseConfigurationReference = 06903977713F462D51238537 /* Pods-CESAUIUC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CESAUIUC/CESAUIUC.entitlements;
 				DEVELOPMENT_TEAM = D65JPH8G3U;
 				INFOPLIST_FILE = CESAUIUC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

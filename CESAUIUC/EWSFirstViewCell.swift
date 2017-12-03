@@ -46,7 +46,7 @@ class EWSFirstViewCell: UITableViewCell {
         self.addSubview(cardView)
         
         
-        let functionIcon = UIImageView(frame: CGRect(x: 12, y: 22.5, width: 40, height: 40))
+        let functionIcon = UIImageView(frame: CGRect(x: 10, y: 22.5, width: 40, height: 40))
         functionIcon.backgroundColor = UIColor.clear
         functionIcon.image = #imageLiteral(resourceName: "ews")
         cardView.addSubview(functionIcon)
@@ -54,7 +54,7 @@ class EWSFirstViewCell: UITableViewCell {
         let ewsName = UILabel(frame: CGRect(x: 80, y: 22.5, width: 200, height: 20))
         ewsName.text = ews["strlabname"] as! String?
         ewsName.textColor = UIColor(white: 155/255, alpha: 1.0)
-        ewsName.font = UIFont(name: "Avenir-Roman", size: 15)
+        ewsName.font = UIFont(name: "Avenir-Medium", size: 15)
         cardView.addSubview(ewsName)
         
         let inUseCount = ews["inusecount"] as! Int
@@ -62,19 +62,19 @@ class EWSFirstViewCell: UITableViewCell {
         let functionDescrip = UILabel(frame: CGRect(x: 80, y: 42.5, width: 200, height: 20))
         functionDescrip.text = String(inUseCount) + " / " + String(machineCount)
         functionDescrip.textColor = UIColor(white: 155/255, alpha: 0.9)
-        functionDescrip.font = UIFont(name: "Avenir-Light", size: 14)
+        functionDescrip.font = UIFont(name: "Avenir-Roman", size: 14)
         cardView.addSubview(functionDescrip)
         
         
         let statusView = UILabel(frame: CGRect(x: screen_width-120, y: 42.5-15, width: 30, height: 30))
         
-        statusView.font = UIFont(name: "Avenir-Book", size: 15)
+        statusView.font = UIFont(name: "Avenir-Medium", size: 15)
         if inUseCount >= machineCount {
             statusView.backgroundColor = UIColor.white
-            statusView.textColor = orangeTheme
+            statusView.textColor = purpleDarkTheme
             statusView.text = "Full"
         }else{
-            statusView.backgroundColor = orangeTheme
+            statusView.backgroundColor = purpleDarkTheme
             statusView.textColor = UIColor.white
             statusView.text = String.init(format: "%d", machineCount-inUseCount)
             statusView.textAlignment = .center

@@ -59,17 +59,17 @@ class EWSFirstView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         
         let myBandView = UIView(frame: CGRect(x: 0, y: 0, width:screen_width,height: 80))
-        myBandView.backgroundColor = orangeTheme
-        myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
+        myBandView.backgroundColor = purpleTheme
+        /*myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
         myBandView.layer.shadowOffset = CGSize(width: 0.5, height: 2.0)
-        myBandView.layer.shadowOpacity = 0.9
+        myBandView.layer.shadowOpacity = 0.9*/
         self.addSubview(myBandView)
         
         let functionTitle = UILabel(frame: CGRect(x: 0, y: 20, width: screen_width, height: 60))
         functionTitle.text = "EWS Status"
         functionTitle.textColor = UIColor.white
         functionTitle.textAlignment = .center
-        functionTitle.font = UIFont(name: "Avenir-Light", size: 19)
+        functionTitle.font = UIFont(name: "Avenir-Heavy", size: 19)
         myBandView.addSubview(functionTitle)
         
         
@@ -125,18 +125,30 @@ class EWSFirstView: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: screen_width, height: 70))
         headerView.backgroundColor = UIColor.white
-        let askingText = UILabel(frame: CGRect(x: 40, y: 30, width: screen_width, height: 30))
+        let askingText = UILabel(frame: CGRect(x: 35, y: 40, width: screen_width, height: 30))
         askingText.textAlignment = .left
         askingText.textColor = UIColor.gray
-        askingText.text = "Machine Location"
+        
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            askingText.text = "机器所在的位置"
+        }else{
+            askingText.text = "Machine Location"
+        }
         askingText.font = UIFont(name: "Avenir-Medium", size: 14)
 
 
-        let changeBtn = UILabel(frame: CGRect(x: screen_width-110, y: 30, width: 80, height: 30))
+        let changeBtn = UILabel(frame: CGRect(x: screen_width-110, y: 40, width: 80, height: 30))
         if iphone5{
             changeBtn.frame = CGRect(x: screen_width-100, y: 30, width: 80, height: 30)
         }
-        changeBtn.text = "#Available"
+        
+        if language == "chinese"{
+            changeBtn.text = "#空位数量"
+        }else{
+            changeBtn.text = "#Available"
+        }
+
         changeBtn.backgroundColor = UIColor.clear
         changeBtn.textColor = UIColor.gray
         changeBtn.font = UIFont(name: "Avenir-Medium", size: 14)

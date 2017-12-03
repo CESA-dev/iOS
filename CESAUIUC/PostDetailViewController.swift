@@ -9,15 +9,24 @@
 import UIKit
 
 class PostDetailViewController: UIViewController, postDetailDelegate {
-
+    var url : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let postDetailView = PostDetailView()
+        let postDetailView = PostDetailView(url:url)
         postDetailView.delegate = self
+        //postDetailView.urlString = url
         self.view.addSubview(postDetailView)
         
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

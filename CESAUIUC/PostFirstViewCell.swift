@@ -32,8 +32,6 @@ class PostFirstViewCell : UITableViewCell {
 
     
     func initCellView(info : [String:Any]){
-        
-        
 //        let readDot = UIView(frame: CGRect(x: 25-5, y: 27, width: 10, height: 10))
 //        readDot.backgroundColor = orangeTheme
 //        readDot.layer.cornerRadius = 5
@@ -42,40 +40,50 @@ class PostFirstViewCell : UITableViewCell {
 //            self.addSubview(readDot)
 //        }
         
+        let cardView = UIView(frame: CGRect(x: 15.0, y: 7.0, width: Double(screen_width-30), height: 120-14))
+        cardView.backgroundColor = UIColor.white
+        cardView.layer.shadowColor = UIColor(white: 220.0/255, alpha: 1.0).cgColor
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        cardView.layer.shadowOpacity = 0.9
         
+        self.contentView.addSubview(cardView)
         
-        let postTitle = UILabel(frame: CGRect(x: 50, y: 20, width: self.contentView.frame.width-100, height: 25))
+        let postTitle = UITextView(frame: CGRect(x: 30, y: 7, width: cardView.frame.width-100, height: 53))
         postTitle.text = info["title"] as! String?
         postTitle.textColor = UIColor(white: 101/255, alpha: 1.0)
         postTitle.font = UIFont(name: "Avenir-Medium", size: 17)
-        self.addSubview(postTitle)
+        postTitle.isEditable = false
+        postTitle.isSelectable = false
+        //postTitle.isScrollEnabled = false
+        postTitle.showsVerticalScrollIndicator = false
+        cardView.addSubview(postTitle)
         
-        let postDetail = UILabel(frame: CGRect(x: 50, y: 50, width: self.contentView.frame.width-70, height: 25))
+        /*let postDetail = UILabel(frame: CGRect(x: 30, y: 38, width: self.contentView.frame.width-70, height: 25))
         postDetail.text = info["detail"] as! String?
         postDetail.textColor = UIColor(white: 84/255, alpha: 1.0)
         postDetail.font = UIFont(name: "Avenir-Book", size: 12)
-        self.addSubview(postDetail)
+        cardView.addSubview(postDetail)*/
         
-        let authorLabel = UILabel(frame: CGRect(x: 50, y: 85, width: 60, height: 20))
+        let authorLabel = UILabel(frame: CGRect(x: 30, y: Double(cardView.frame.height - 35), width: 100, height: 20))
         authorLabel.backgroundColor = UIColor(red: 239/255, green: 88/255, blue: 106/255, alpha: 1.0)
-        authorLabel.text = info["author"] as! String?
+        authorLabel.text = info["companyName"] as! String?
         authorLabel.textColor = UIColor.white
         authorLabel.textAlignment = .center
         authorLabel.font = UIFont(name: "Avenir-Heavy", size: 11)
         authorLabel.layer.cornerRadius = 2.0
         authorLabel.clipsToBounds = true
-        self.addSubview(authorLabel)
+        let fitSize = authorLabel.text?.size(attributes: [NSFontAttributeName: authorLabel.font]) ?? .zero
+        authorLabel.frame = CGRect(x: 33.0, y: Double(cardView.frame.height - 35), width: Double(fitSize.width) + 20.0, height: 20.0)
+        cardView.addSubview(authorLabel)
         
         
-        let dayLabel = UILabel(frame: CGRect(x: screen_width-50-50, y: Double(authorLabel.frame.origin.y), width: 80, height: 20))
+        let dayLabel = UILabel(frame: CGRect(x: Double(cardView.frame.width)-50-50-10, y: Double(authorLabel.frame.origin.y), width: 80, height: 20))
         dayLabel.textAlignment = .right
-        dayLabel.text = "2 days ago"
+        dayLabel.text = info["location"] as! String?
         dayLabel.textColor = UIColor(white: 155/255, alpha: 1.0)
         dayLabel.font = UIFont(name: "Avenir-Book", size: 10)
-        self.addSubview(dayLabel)
-        
-        
-        
+        cardView.addSubview(dayLabel)
+
     }
 
     

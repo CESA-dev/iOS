@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import GoogleMaps
-import GooglePlaces
+
 
 
 protocol SearchByRouteViewDelegate {
@@ -16,8 +15,8 @@ protocol SearchByRouteViewDelegate {
     func showBar()
 }
 
-class SearchByRouteView: UIView, UITextFieldDelegate, SearchByRouteResultDelegate {
-    var cardView : UIView!
+class SearchByRouteView: UIView, UITextFieldDelegate{//, SearchByRouteResultDelegate {
+    /*var cardView : UIView!
     var delegate : SearchByRouteViewDelegate!
     var fromTextField : UITextField!
     var toTextField : UITextField!
@@ -249,5 +248,6 @@ class SearchByRouteView: UIView, UITextFieldDelegate, SearchByRouteResultDelegat
         // Drawing code
     }
     */
+ */
 
 }

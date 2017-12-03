@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import GoogleMaps
-import GooglePlaces
+
 
 class SearchByRouteResultCell: UITableViewCell {
 
@@ -23,7 +22,7 @@ class SearchByRouteResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func createCellUI(prediction : GMSAutocompletePrediction){
+    /*func createCellUI(prediction : GMSAutocompletePrediction){
         //let searchPredictionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 44))
         //searchPredictionLabel.text = text
         //searchPredictionLabel.textColor = orangeTheme
@@ -45,5 +44,7 @@ class SearchByRouteResultCell: UITableViewCell {
         
         self.textLabel?.attributedText = bolded
     }
+ 
+ */
 
 }

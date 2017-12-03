@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import GoogleMaps
-import GooglePlaces
+
 
 protocol SearchByRouteResultDelegate {
     func updateSelection(address : String)
 }
 
-class SearchByRouteResultView: UIView, UITableViewDelegate, UITableViewDataSource {
-    var resultTableView : UITableView!
+class SearchByRouteResultView: UIView{//, UITableViewDelegate, UITableViewDataSource {
+    /*var resultTableView : UITableView!
     var resultArray : Array<GMSAutocompletePrediction> = []
     var delegate : SearchByRouteResultDelegate!
     override init(frame: CGRect) {
@@ -77,5 +76,7 @@ class SearchByRouteResultView: UIView, UITableViewDelegate, UITableViewDataSourc
         // Drawing code
     }
     */
+     
+ */
 
 }

@@ -8,21 +8,56 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 
 
 
-class ViewController: UIViewController, mainMenuViewDelegate {
+
+class ViewController: UIViewController, mainMenuViewDelegate, CESALanguageViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
+        self.view.layer.cornerRadius = 3.0
         
         
-        let mainMenu = CESAMainMenuView()
-        mainMenu.delegate = self
-        self.view.addSubview(mainMenu)
+        
+        let launchBefore = UserDefaults.standard.bool(forKey: "launchBe")
+        if launchBefore{
+            print("not first launch")
+            
+            
+            
+            let mainMenu = CESAMainMenuView()
+            mainMenu.delegate = self
+            self.view.addSubview(mainMenu)
+            
+            
+            
+            
+        }else{
+            print("first launch")
+            UserDefaults.standard.set(true, forKey: "launchBe")
+            let languageView = CESALanguageView(frame: self.view.frame)
+            languageView.delegate = self
+            self.view.addSubview(languageView)
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -53,7 +88,25 @@ class ViewController: UIViewController, mainMenuViewDelegate {
 //        }
         
     }
+    
+    
+    func finishSelectingLanguage(){
+        
+        
+        
+        
+        
+        let mainMenu = CESAMainMenuView()
+        mainMenu.delegate = self
+        self.view.addSubview(mainMenu)
+    }
 
+    
+    func showChangeLanguagePage(){
+        let languageView = CESALanguageView(frame: self.view.frame)
+        languageView.delegate = self
+        self.view.addSubview(languageView)
+    }
     
     
     

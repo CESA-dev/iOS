@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
-import  GoogleMaps
+
 
 class StopDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
     var stopName : String!
@@ -75,13 +75,14 @@ class StopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func createMap(){
-        let mapView = MKMapView(frame: CGRect(x: 0, y: 80, width: screen_width, height: 250-80))
+        let mapView = MKMapView(frame: CGRect(x: 20, y: 100, width: screen_width-40, height: 250-100))
         mapView.centerCoordinate = CLLocationCoordinate2D(latitude: self.stopPointsArray[0]["stop_lat"] as! CLLocationDegrees, longitude: self.stopPointsArray[0]["stop_lon"] as! CLLocationDegrees)
         mapView.isZoomEnabled = true
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.showsCompass = true
         mapView.showsBuildings = true
+        mapView.layer.cornerRadius = 8
         self.view.addSubview(mapView)
         
         let regionRadius : CLLocationDistance = 100
@@ -96,7 +97,7 @@ class StopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         self.createMap()
         
         
-        busTableView = UITableView(frame: CGRect(x:0, y:250, width: CGFloat(screen_width), height: self.view.frame.height-250), style: .plain)
+        busTableView = UITableView(frame: CGRect(x:0, y:260, width: CGFloat(screen_width), height: self.view.frame.height-260), style: .plain)
         busTableView.delegate = self
         busTableView.dataSource = self
         busTableView.register(StopDetailViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
@@ -108,17 +109,17 @@ class StopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
         let myBandView = UIView(frame: CGRect(x: 0, y: 0, width:screen_width,height: 80))
-        myBandView.backgroundColor = orangeTheme
-        myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
+        myBandView.backgroundColor = brownTheme
+        /*myBandView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
         myBandView.layer.shadowOffset = CGSize(width: 0.5, height: 2.0)
-        myBandView.layer.shadowOpacity = 0.9
+        myBandView.layer.shadowOpacity = 0.9*/
         self.view.addSubview(myBandView)
         
         let functionTitle = UILabel(frame: CGRect(x: 0, y: 20, width: screen_width, height: 60))
         functionTitle.text = self.stopName
         functionTitle.textColor = UIColor.white
         functionTitle.textAlignment = .center
-        functionTitle.font = UIFont(name: "Avenir-Light", size: 18)
+        functionTitle.font = UIFont(name: "Avenir-Heavy", size: 18)
         myBandView.addSubview(functionTitle)
         
         
@@ -179,6 +180,7 @@ class StopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         let time = self.busArray[indexPath.row]["expected_mins"] as! Int
         
         cell.createCard(headSignName: headSignName, direction: direction, time: time)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -240,7 +242,7 @@ class StopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 let goBtn = UIButton(type: .custom)
                 goBtn.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-                goBtn.backgroundColor = orangeTheme
+                goBtn.backgroundColor = brownDarkTheme
                 goBtn.setTitle("Go", for: .normal)
                 goBtn.setTitleColor(UIColor.white, for: .normal)
                 goBtn.layer.cornerRadius = 8.0

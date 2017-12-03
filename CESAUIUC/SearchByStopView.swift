@@ -47,7 +47,13 @@ class SearchByStopView: UIView, UITableViewDelegate, UITableViewDataSource, CLLo
         activity.startAnimating()
         
         activityText = UILabel(frame: CGRect(x: 0, y: activity.center.y+20, width: CGFloat(screen_width), height: 30))
-        activityText.text = "Getting your current location..."
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            activityText.text = "正在获取你的当前位置"
+        }else{
+            activityText.text = "Getting your current location..."
+        }
+        
         activityText.textAlignment = .center
         activityText.textColor = UIColor.gray
         activityText.font = UIFont(name: "Avenir-Medium", size: 13)
@@ -117,7 +123,13 @@ class SearchByStopView: UIView, UITableViewDelegate, UITableViewDataSource, CLLo
         askingText.textAlignment = .left
         askingText.backgroundColor = UIColor.clear
         askingText.textColor = UIColor.gray
-        askingText.text = "Stop Name"
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            askingText.text = "公车站名"
+        }else{
+            askingText.text = "Stop Name"
+        }
+        
         askingText.font = UIFont(name: "Avenir-Medium", size: 13)
         headerView.addSubview(askingText)
 
@@ -126,7 +138,13 @@ class SearchByStopView: UIView, UITableViewDelegate, UITableViewDataSource, CLLo
             changeBtn.frame = CGRect(x: screen_width-100, y: 30, width: 80, height: 30)
         }*/
         changeBtn.textAlignment = .right
-        changeBtn.text = "Distance"
+        
+        if language == "chinese"{
+            changeBtn.text = "距离"
+        }else{
+            changeBtn.text = "Distance"
+        }
+        
         changeBtn.backgroundColor = UIColor.clear
         changeBtn.textColor = UIColor.gray
         changeBtn.font = UIFont(name: "Avenir-Medium", size: 13)
@@ -151,7 +169,7 @@ class SearchByStopView: UIView, UITableViewDelegate, UITableViewDataSource, CLLo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SearchByStopViewCell(style: .default, reuseIdentifier: "Cell")
         
-        cell.createCard(stopName: self.stopArray[indexPath.row]["stop_name"] as! String, distance: self.stopArray[indexPath.row]["distance"] as! Int)
+        cell.createCard(stopName: self.stopArray[indexPath.row]["stop_name"] as! String, distance: self.stopArray[indexPath.row]["distance"] as! NSNumber)
         cell.selectionStyle = .none
         
         return cell

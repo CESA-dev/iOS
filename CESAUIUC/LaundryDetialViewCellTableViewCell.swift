@@ -49,7 +49,7 @@ class LaundryDetialViewCellTableViewCell: UITableViewCell {
         }
         machineName.text = machine["description"] as! String?
         machineName.textColor = UIColor(white: 155/255, alpha: 1.0)
-        machineName.font = UIFont(name: "Avenir-Roman", size: 15)
+        machineName.font = UIFont(name: "Avenir-Medium", size: 15)
         cardView.addSubview(machineName)
         
         let functionDescrip = UILabel(frame: CGRect(x: 80, y: 42.5, width: 200, height: 20))
@@ -58,10 +58,10 @@ class LaundryDetialViewCellTableViewCell: UITableViewCell {
         }
         functionDescrip.text = machine["label"]! as? String
         functionDescrip.textColor = UIColor(white: 155/255, alpha: 0.9)
-        functionDescrip.font = UIFont(name: "Avenir-Light", size: 14)
+        functionDescrip.font = UIFont(name: "Avenir-Roman", size: 14)
         cardView.addSubview(functionDescrip)
         
-        let functionIcon = UIImageView(frame: CGRect(x: 15, y: 22.5, width: 40, height: 40))
+        let functionIcon = UIImageView(frame: CGRect(x: 10, y: 22.5, width: 40, height: 40))
         if iphone5{
             functionIcon.frame = CGRect(x: 5, y: 22.5, width: 40, height: 40)
         }
@@ -97,7 +97,7 @@ class LaundryDetialViewCellTableViewCell: UITableViewCell {
                 remainText.backgroundColor = UIColor.white
                 remainText.textColor = orangeTheme
                 remainText.text = "remain"
-                remainText.font = UIFont(name: "Avenir-Book", size: 13)
+                remainText.font = UIFont(name: "Avenir-Medium", size: 13)
                 remainText.textAlignment = .center
                 cardView.addSubview(remainText)
                 
@@ -107,28 +107,28 @@ class LaundryDetialViewCellTableViewCell: UITableViewCell {
                 statusView.text = machine["timeRemaining"] as! String?
             }
             statusView.textAlignment = .center
-            statusView.font = UIFont(name: "Avenir-Book", size: 13)
+            statusView.font = UIFont(name: "Avenir-Medium", size: 13)
             cardView.addSubview(statusView)
             
             
             
         }else if machine["status"] as! String? == "Available"{
             let statusView = UILabel(frame: CGRect(x: statusViewOriginX, y: 42.5-15, width: 60, height: 30))
-            statusView.backgroundColor = orangeTheme
+            statusView.backgroundColor = greenDarkTheme
             statusView.textColor = UIColor.white
             statusView.text = "Free"
             statusView.textAlignment = .center
             statusView.layer.cornerRadius = 15
             statusView.clipsToBounds = true
-            statusView.font = UIFont(name: "Avenir-Light", size: 12)
+            statusView.font = UIFont(name: "Avenir-Roman", size: 12)
             cardView.addSubview(statusView)
         }else{
             let statusView = UILabel(frame: CGRect(x: statusViewOriginX, y: 42.5-15, width: 80, height: 30))
             statusView.backgroundColor = UIColor.white
-            statusView.textColor = orangeTheme
+            statusView.textColor = greenDarkTheme
             statusView.text = machine["status"] as! String?
             statusView.textAlignment = .center
-            statusView.font = UIFont(name: "Avenir-Light", size: 12)
+            statusView.font = UIFont(name: "Avenir-Roman", size: 12)
             cardView.addSubview(statusView)
         }
         

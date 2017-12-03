@@ -25,7 +25,7 @@ class SearchByStopViewCell: UITableViewCell {
     }
     
     
-    func createCard(stopName : String, distance : Int){
+    func createCard(stopName : String, distance : NSNumber){
         let cardView = UIView(frame: CGRect(x: 25.0, y: 7.0, width: Double(screen_width-50), height: stopCellHeight-14))
         cardView.backgroundColor = UIColor.white
         cardView.layer.shadowColor = UIColor(white: 220.0/255, alpha: 1.0).cgColor
@@ -35,16 +35,16 @@ class SearchByStopViewCell: UITableViewCell {
         self.contentView.addSubview(cardView)
         
         let stopNameLabel = UILabel(frame: CGRect(x: 20, y: 0, width: cardView.frame.width/3 * 2 - 20, height: cardView.frame.height))
-        stopNameLabel.textColor = orangeTheme
+        stopNameLabel.textColor = brownDarkTheme
         stopNameLabel.text = stopName
-        stopNameLabel.font = UIFont(name: "Avenir-Roman", size: 15)
+        stopNameLabel.font = UIFont(name: "Avenir-Medium", size: 15)
         cardView.addSubview(stopNameLabel)
         
         
         let stopDistanceLabel = UILabel(frame: CGRect(x: cardView.frame.width/3 * 2, y: 0, width: cardView.frame.width/3-20, height: cardView.frame.height))
-        stopDistanceLabel.text = "\(distance) ft"
+        stopDistanceLabel.text = "\(distance.intValue) ft"
         stopDistanceLabel.textAlignment = .right
-        stopDistanceLabel.font = UIFont(name: "Avenir-Roman", size: 12)
+        stopDistanceLabel.font = UIFont(name: "Avenir-Medium", size: 12)
         stopDistanceLabel.textColor = UIColor(white: 160.0/255, alpha: 1.0)
         cardView.addSubview(stopDistanceLabel)
         

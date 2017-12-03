@@ -11,66 +11,226 @@ import UIKit
 
 protocol mainMenuViewDelegate {
     func pushFunctionPage(identifier : String)
+    func showChangeLanguagePage()
 }
 
 
 let screen_width = Double(UIScreen.main.bounds.size.width)
 let screen_height = Double(UIScreen.main.bounds.size.height)
-let functionMenu = [["functionName" : "Laundry",
+let orangeTheme = UIColor(red: 255/255, green: 174/255, blue: 79/255, alpha: 1.0)
+let greenTheme = UIColor(red: 163/255, green: 216/255, blue: 212/255, alpha: 1.0)
+let greenDarkTheme = UIColor(red: 121/255, green: 171/255, blue: 167/255, alpha: 1.0)
+let brownTheme = UIColor(red: 220/255, green: 202/255, blue: 198/255, alpha: 1.0)
+let brownDarkTheme = UIColor(red: 183/255, green: 158/255, blue: 153/255, alpha: 1.0)
+let orangePinkTheme = UIColor(red: 247/255, green: 204/255, blue: 187/255, alpha: 1.0)
+let orangePinkDarkTheme = UIColor(red: 209/255, green: 164/255, blue: 146/255, alpha: 1.0)
+let blueTheme = UIColor(red: 193/255, green: 228/255, blue: 252/255, alpha: 1.0)
+let blueDarkTheme = UIColor(red: 145/255, green: 177/255, blue: 199/255, alpha: 1.0)
+let purpleTheme = UIColor(red: 226/255, green: 211/255, blue: 234/255, alpha: 1.0)
+let purpleDarkTheme = UIColor(red: 165/255, green: 153/255, blue: 172/255, alpha: 1.0)
+
+
+func checkIphoneX() -> Bool{
+    if UIScreen.main.nativeBounds.height == 2436{
+        return true
+    }
+    return false
+}
+
+
+
+let functionMenu = [["functionName" : "Restaurant",
+                     "functionIcon" : "dining",
+                     "functionIdentifier" : "dining",
+                     "functionDescrip" : "Menu recommendation",
+                     "functionColor" : orangePinkTheme,
+                     "functionDetailColor" : orangePinkDarkTheme],
+                    ["functionName" : "Find a Job",
+                     "functionIcon" : "job",
+                     "functionIdentifier" : "post",
+                     "functionDescrip" : "A great place for finding jobs",
+                     "functionColor" : blueTheme,
+                     "functionDetailColor" : blueDarkTheme],
+                    ["functionName" : "Laundry",
                      "functionIcon" : "laundry",
                      "functionIdentifier" : "laundryDetail",
-                     "functionDescrip" : "Laundry device usage"],
-                    /*["functionName" : "Post",
-                     "functionIcon" : "bus",
-                     "functionIdentifier" : "post",
-                     "functionDescrip" : "Create or join activities"],*/
+                     "functionDescrip" : "Laundry device usage",
+                     "functionColor" : greenTheme,
+                     "functionDetailColor" : greenDarkTheme],
                     ["functionName" : "Transportation",
                      "functionIcon" : "bus",
                      "functionIdentifier" : "bus",
-                     "functionDescrip" : "Check MTD bus departure time"],
-                    ["functionName" : "Dining",
-                     "functionIcon" : "dining",
-                     "functionIdentifier" : "dining",
-                     "functionDescrip" : "Menu for all resident halls"],
+                     "functionDescrip" : "Check MTD bus departure time",
+                     "functionColor" : brownTheme,
+                     "functionDetailColor" : brownDarkTheme],
+                    
                     ["functionName" : "EWS",
                      "functionIcon" : "ews",
                      "functionIdentifier" : "ews",
-                     "functionDescrip" : "EWS Status"],]
+                     "functionDescrip" : "EWS Status",
+                     "functionColor" : purpleTheme,
+                     "functionDetailColor" : purpleDarkTheme],
+                   /* ["functionName" : "Job Finder",
+                     "functionIcon" : "ews",
+                     "functionIdentifier" : "job",
+                     "functionDescrip" : "Looking for job"],*/]
 
-let orangeTheme = UIColor(red: 255/255, green: 174/255, blue: 79/255, alpha: 1.0)
+
+let functionMenuCH = [["functionName" : "菜单推荐",
+                     "functionIcon" : "dining",
+                     "functionIdentifier" : "dining",
+                     "functionDescrip" : "您的点菜小助手",
+                     "functionColor" : orangePinkTheme,
+                     "functionDetailColor" : orangePinkDarkTheme],
+                    ["functionName" : "找工作",
+                     "functionIcon" : "job",
+                     "functionIdentifier" : "post",
+                     "functionDescrip" : "每周更新的招聘信息",
+                     "functionColor" : blueTheme,
+                     "functionDetailColor" : blueDarkTheme],
+                    ["functionName" : "洗衣房",
+                     "functionIcon" : "laundry",
+                     "functionIdentifier" : "laundryDetail",
+                     "functionDescrip" : "查看学校宿舍的洗衣机使用情况",
+                     "functionColor" : greenTheme,
+                     "functionDetailColor" : greenDarkTheme],
+                    ["functionName" : "公交时刻表",
+                     "functionIcon" : "bus",
+                     "functionIdentifier" : "bus",
+                     "functionDescrip" : "查看下一辆车还有多久到",
+                     "functionColor" : brownTheme,
+                     "functionDetailColor" : brownDarkTheme],
+                    
+                    ["functionName" : "EWS",
+                     "functionIcon" : "ews",
+                     "functionIdentifier" : "ews",
+                     "functionDescrip" : "帮你查EWS有没有空位",
+                     "functionColor" : purpleTheme,
+                     "functionDetailColor" : purpleDarkTheme],
+                    /* ["functionName" : "Job Finder",
+     "functionIcon" : "ews",
+     "functionIdentifier" : "job",
+     "functionDescrip" : "Looking for job"],*/]
 
 
-class CESAMainMenuView: UIView, UITableViewDelegate, UITableViewDataSource {
+
+
+class CESAMainMenuView: UIView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     var menuTableView : UITableView!
     var delegate : mainMenuViewDelegate!
-    
+    var schoolLogo: UIButton!
+    var logoTitle : UILabel!
+    let defaultOffset : CGFloat = -130
+    var functionMenuArray : Array<Dictionary<String,Any>>!
+    var changeLang : UIButton!
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: screen_width, height: screen_height))
-        self.backgroundColor = orangeTheme
-        
+        self.backgroundColor = UIColor(white: 255.0/255, alpha: 1.0)//orangeTheme
+        self.layer.cornerRadius = 3
+        self.clipsToBounds = true
         //self.fadeCreate()
         
-        let schoolLogo = UIButton(frame: CGRect(x: screen_width/2 - 30, y: 43, width: 60, height: 60))
-        schoolLogo.setImage(#imageLiteral(resourceName: "cesa logo clear"), for: .normal)
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            functionMenuArray = functionMenuCH
+        }else{
+            functionMenuArray = functionMenu
+        }
+        
+        self.createMainUI()
+        
+        
+        
+        
+    }
+    
+    
+    func createMainUI(){
+        schoolLogo = UIButton(frame: CGRect(x: screen_width/2 - 60, y: 0, width: 120, height: 120))
+        if checkIphoneX(){
+            schoolLogo.frame = CGRect(x: screen_width/2 - 60, y: 20, width: 120, height: 120)
+        }
+        schoolLogo.setImage(#imageLiteral(resourceName: "unicorn"), for: .normal)
         schoolLogo.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        schoolLogo.alpha = 0.6
+        schoolLogo.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
         self.addSubview(schoolLogo)
         
         
         
         
+        logoTitle = UILabel(frame: CGRect(x: screen_width/2 - 50, y: Double(schoolLogo.frame.height)-20, width: 100, height: 30))
+        logoTitle.text = "Uni-Corn"
+        logoTitle.font = UIFont(name: "Avenir-Heavy", size: 11)
+        logoTitle.textColor = UIColor(white: 220/255, alpha: 1.0)
+        logoTitle.textAlignment = .center
+        logoTitle.alpha = 0.0
+        self.addSubview(logoTitle)
+        
+        UIView.animate(withDuration: 0.3/1.0, delay: 1.0, options: .curveEaseOut, animations: {
+            self.schoolLogo.transform = CGAffineTransform.identity.scaledBy(x: 1.1, y: 1.1)
+        }) { (Bool) in
+            UIView.animate(withDuration: 0.3/1.5, animations: {
+                self.schoolLogo.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
+            }) { (Bool) in
+                
+                UIView.animate(withDuration: 0.3/2, animations: {
+                    self.schoolLogo.transform = CGAffineTransform.identity
+                }) { (Bool) in
+                    
+                    if checkIphoneX(){
+                        self.logoTitle.frame = CGRect(x: screen_width/2 - 50, y: 120, width: 100, height: 30)
+                    }else{
+                        self.logoTitle.frame = CGRect(x: screen_width/2 - 50, y: Double(self.schoolLogo.frame.height)-20, width: 100, height: 30)
+                    }
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.logoTitle.alpha = 1.0
+                        if checkIphoneX(){
+                            self.logoTitle.frame = CGRect(x: screen_width/2 - 50, y: 120-30+20, width: 100, height: 30)
+                        }else{
+                            self.logoTitle.frame = CGRect(x: screen_width/2 - 50, y: Double(self.schoolLogo.frame.height)-30, width: 100, height: 30)
+                        }
+                        
+                    })
+                    
+                    
+                    self.menuTableView = UITableView(frame: CGRect(x: 0, y: 0, width: screen_width, height: screen_height), style: .plain)
+                    self.menuTableView.delegate = self
+                    self.menuTableView.dataSource = self
+                    self.menuTableView.register(CESAMainMenuTableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+                    self.menuTableView.separatorStyle = .none
+                    self.menuTableView.backgroundColor = UIColor.clear
+                    self.menuTableView.showsVerticalScrollIndicator = false
+                    self.menuTableView.contentInset = UIEdgeInsetsMake(110, 0, 0, 0)
+                    
+                    self.addSubview(self.menuTableView)
+                    
+                    
+                    self.changeLang = UIButton(frame: self.schoolLogo.frame)
+                    self.changeLang.addTarget(self, action: #selector(self.changeLanguage), for: .touchUpInside)
+                    self.addSubview(self.changeLang)
+                    
+                    
+                    
+                }
+                
+            }
+        }
         
         
         
-        menuTableView = UITableView(frame: CGRect(x: 0, y: 120, width: screen_width, height: screen_height-120), style: .plain)
-        menuTableView.delegate = self
-        menuTableView.dataSource = self
-        menuTableView.register(CESAMainMenuTableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
-        menuTableView.separatorStyle = .none
-        menuTableView.backgroundColor = UIColor.clear
-        self.addSubview(menuTableView)
-
+        
+        let madeTitle = UILabel(frame: CGRect(x: screen_width/2 - 50, y: screen_height-35, width: 100, height: 30))
+        madeTitle.text = "Made by CESA"
+        madeTitle.font = UIFont(name: "Avenir-Medium", size: 11)
+        madeTitle.textColor = UIColor(white: 220/255, alpha: 1.0)
+        madeTitle.textAlignment = .center
+        self.addSubview(madeTitle)
         
         
+        if checkIphoneX(){
+            madeTitle.frame = CGRect(x: screen_width/2 - 50, y: screen_height-45, width: 100, height: 30)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,7 +240,7 @@ class CESAMainMenuView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return functionMenu.count
+        return functionMenuArray.count
         
     }
     
@@ -88,7 +248,10 @@ class CESAMainMenuView: UIView, UITableViewDelegate, UITableViewDataSource {
         let cell = CESAMainMenuTableViewCell(style: .default, reuseIdentifier: "Cell")
         
         //cell.textLabel?.text = functionMenu[indexPath.row]
-        cell.initCardView(function:functionMenu[indexPath.row])
+        
+        cell.initCardView(function:functionMenuArray[indexPath.row], index : indexPath.row)
+        
+        cell.selectionStyle = .none
         
         return cell
         
@@ -105,8 +268,8 @@ class CESAMainMenuView: UIView, UITableViewDelegate, UITableViewDataSource {
         
 
         ///////这里要改成每个view有一个viewcontroller！！！！！！！！！！！！！
-        print(functionMenu[indexPath.row]["functionIdentifier"]!)
-        self.delegate.pushFunctionPage(identifier: functionMenu[indexPath.row]["functionIdentifier"]!)
+        print(functionMenuArray[indexPath.row]["functionIdentifier"]!)
+        self.delegate.pushFunctionPage(identifier: functionMenuArray[indexPath.row]["functionIdentifier"]! as! String)
         
 
         
@@ -143,6 +306,49 @@ class CESAMainMenuView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
+        
+        
+        
+        
+        let offsetY = scrollView.contentOffset.y
+        print(offsetY)
+        
+        
+        
+        
+        
+        
+        
+        if offsetY > defaultOffset{
+            let diff = offsetY - defaultOffset
+            schoolLogo.alpha = 1-((1/100)*diff)-0.4
+            logoTitle.alpha = 1-((1/100)*diff)
+            if self.changeLang != nil{
+                self.changeLang.isEnabled = false
+            }
+            
+        }else if offsetY > (defaultOffset+100){
+            schoolLogo.alpha = 0.0
+            logoTitle.alpha = 0.0
+        }else{
+            schoolLogo.alpha = 0.6
+            logoTitle.alpha = 1.0
+            if self.changeLang != nil{
+                self.changeLang.isEnabled = true
+            }
+        }
+    }
+    
+    
+    func changeLanguage(){
+        self.delegate.showChangeLanguagePage()
+        self.removeFromSuperview()
+    }
     
     /*
     // Only override draw() if you perform custom drawing.

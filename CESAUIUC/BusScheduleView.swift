@@ -54,10 +54,10 @@ class BusScheduleView: UIView, UITextFieldDelegate, SearchByStopViewDelegate, Se
     private func createSelectionHeaderBar(){
         
         barView = UIView(frame: CGRect(x: 0, y: 0, width: screen_width, height: barHeight))
-        barView.backgroundColor = orangeTheme
-        barView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
+        barView.backgroundColor = brownTheme
+        /*barView.layer.shadowColor = UIColor(white: 155.0/255, alpha: 0.9).cgColor
         barView.layer.shadowOffset = CGSize(width: 0.5, height: 2.0)
-        barView.layer.shadowOpacity = 0.9
+        barView.layer.shadowOpacity = 0.9*/
         self.addSubview(barView)
         
         let backBtn = UIButton(frame: CGRect(x: 0, y: 20, width: 60, height: 60))
@@ -75,10 +75,16 @@ class BusScheduleView: UIView, UITextFieldDelegate, SearchByStopViewDelegate, Se
         self.addSubview(refreshCurrentLocation)
         
         let functionTitle = UILabel(frame: CGRect(x: 0, y: 20, width: screen_width, height: 60))
-        functionTitle.text = "Bus Schedule"
+        let language = UserDefaults.standard.object(forKey: "language") as! String
+        if language == "chinese"{
+            functionTitle.text = "车站查询"
+        }else{
+            functionTitle.text = "Bus Schedule"
+        }
+        
         functionTitle.textColor = UIColor.white
         functionTitle.textAlignment = .center
-        functionTitle.font = UIFont(name: "Avenir-Light", size: 19)
+        functionTitle.font = UIFont(name: "Avenir-Heavy", size: 19)
         barView.addSubview(functionTitle)
 
         //self.createSelectionView(headerBar: barView)

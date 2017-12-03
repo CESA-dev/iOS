@@ -39,10 +39,11 @@ class PostViewController: UIViewController, postFirstViewDelegate {
         
     }
     
-    func pushToPostDetail(){
+    func pushToPostDetail(url : String){
         
-        let postDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "postDetail")
-        self.navigationController?.pushViewController(postDetailVC!, animated: true)
+        let postDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "postDetail") as! PostDetailViewController
+        postDetailVC.url = url
+        self.navigationController?.pushViewController(postDetailVC, animated: true)
         
     }
     
